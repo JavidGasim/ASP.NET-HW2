@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model ProductViewModel
+
+<div>
+
+    @foreach (var item in Model.Products)
+    {
+        <div class="card" style="width: 18rem;border:2px solid deepskyblue; border-radius: 10px; margin-top:20px">
+            <div class="card-body">
+                <h5 class="card-title">@item.Name</h5>
+                <p class="card-text">@item.Description</p>
+                <p class="card-text">Price: @item.Price$</p>
+                <p class="card-text">Discount: @item.Discount%</p>
+                <a style="border:2px solid deepskyblue; border-radius: 10px" asp-controller="Home" asp-action="DeleteProduct" asp-route-id="@item.ProductId" class="btn btn-outline-primary">REMOVE</a>
+                <a style="border:2px solid deepskyblue; border-radius: 10px" asp-controller="Home" asp-action="UpdateProduct" asp-route-id="@item.ProductId" class="btn btn-outline-primary">UPDATE</a>
+            </div>
+        </div>
+    }
+
+    <a style="border:2px solid deepskyblue; border-radius: 10px; margin-top:20px;" asp-controller="Home" asp-action="AddProduct" class="btn btn-outline-primary">ADD NEW</a>
+</div>

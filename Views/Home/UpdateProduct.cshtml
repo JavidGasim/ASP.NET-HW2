@@ -1,0 +1,36 @@
+﻿@model UpdateViewModel
+
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+    <section>
+        <form asp-action="UpdateProduct" asp-controller="Home">
+            <div class="mb-3">
+                <label asp-for="Product.Name" class="form-label"></label>
+                <input asp-for="Product.Name" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Product.Description" class=" form-label"></label>
+                <input asp-for="Product.Description" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Product.Price" class="form-label"></label>
+                <input asp-for="Product.Price" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Product.Discount" class="form-label"></label>
+                <input asp-for="Product.Discount" class="form-control" />
+            </div>
+            <input type="hidden" asp-for="Product.ProductId" />
+
+            <button type="submit" style="border:2px solid deepskyblue; border-radius: 10px; margin-top:20px;" class="btn btn-outline-primary">UPDATE</button>
+        </form>
+    </section>
+</body>
+</html>
